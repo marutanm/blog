@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: diary | marutanmlog]]></title>
+  <link href="http://marutanm.github.com/blog/categories/diary/atom.xml" rel="self"/>
+  <link href="http://marutanm.github.com/blog/"/>
+  <updated>2012-01-03T11:52:04+09:00</updated>
+  <id>http://marutanm.github.com/blog/</id>
+  <author>
+    <name><![CDATA[marutanm]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[New Year's Day]]></title>
+    <link href="http://marutanm.github.com/blog/2012/01/01/new-years-day/"/>
+    <updated>2012-01-01T18:50:00+09:00</updated>
+    <id>http://marutanm.github.com/blog/2012/01/01/new-years-day</id>
+    <content type="html"><![CDATA[<p>2011年のまとめ兼2012年の抱負みたいな、まとまりもとりとめもないテキストのはずです、これ。</p>
+
+<iframe src="http://rcm-jp.amazon.co.jp/e/cm?lt1=_blank&bc1=000000&IS2=1&npa=1&bg1=FFFFFF&fc1=000000&lc1=878787&t=marutanm-22&o=9&p=8&l=as4&m=amazon&f=ifr&ref=ss_til&asins=B0051R4F9Y" style="width:120px;height:240px;margin:5px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" align="right"></iframe>
+
+
+<p>そうそう、昨年終わり頃に<a href="http://www.amazon.co.jp/gp/product/B0051R4F9Y/ref=as_li_ss_tl?ie=UTF8&tag=marutanm-22&linkCode=as2&camp=247&creative=7399&creativeASIN=B0051R4F9Y">最新型電気カイロ</a>を買いました。ポケットに入れておくとけっこう暖かいです。しかもWiMAXテザリングができたり、なかなか高機能です。</p>
+
+<p>はい、メイン回線をWiMAXに切り替えたのです。据え置き用には<a href="http://www.shinseicorp.com/wimax/uroad-home/">URoad-Home</a>を使っています。
+あらゆる壁がコンクリート用ピンでも歯が立たずカレンダーをかける場所にすら困る鉄筋コンクリート賃貸住宅のわが家ですが、電波状況は5段階で2。弱めではありますが、必要十分な速度はでています。</p>
+
+<p>切り替えたのは、会社から固定回線の利用補助がでていたのですが<strong>退職</strong>とともに失われてしまったから。
+無線LANにしていたとはいえ、ルータ等で必要だった電源などの醜い配線がなくなりとても満足しています。
+仮に転居するとなっても、ネットワーク断絶することがなくなるわけで素晴らしいですね。</p>
+
+<h3>転機</h3>
+
+<p>退職というか、<strong>転職</strong>ですね。昨年は大きな転機をむかえました。
+「ゆるやかな死を脱せたので、これからは『いかに生きるか』」といったようなことをFacebookに書いたのですが、それがだいたい全てだと思います。
+経済的な面はもちろん、エンジニアとして前職で与えられたキャリアを積み上げていくのに危機感を感じていたところを、転職という形で脱出することができました。
+それによる今のところの一番大きな変化としては「まだ18時か...」が「えっ、もう22時?!」になったことでしょうか。</p>
+
+<p>現状を変えるべくコードをgithubで公開したり、ブログを書いたりといったことにプライベートの時間を費やしてきたうえで訪れたチャンスであったわけですが、期待にそえるようなアウトプットをはたして出来ているものか。
+前述の活動によるなけなしのインプットを隅々まで掻きあさり、さらには周囲の方々の力添えによってようやくその日のコードを生成しているといった状況です。
+自分が一番の下手くそであるという<a href="http://www.amazon.co.jp/gp/product/4274067939/ref=as_li_ss_tl?ie=UTF8&tag=marutanm-22&linkCode=as2&camp=247&creative=7399&creativeASIN=4274067939">情熱プログラマー</a>的には最高な状況はとても大変です。
+しかしながら苦しくはなく、とても楽しい。
+ますます精進し、成長していきたいですね。
+それと、github上でのオープンソースにPull Requestを送ったり、また送ってもらえたりといった活動ももっとしていけたらいいなぁ。</p>
+
+<h3>このブログについて</h3>
+
+<p>今までは、ウェブに公開する文章は主に<a href="http://d.hatena.ne.jp/marutanm/">はてなダイアリー</a>に置いていました。
+そして、それ以外にも開店休業中のブログ等がいくつかあったりします。
+これからは、ある程度まとまった量の文章は、このブログに置いていこうと思います。
+転職を思い立ってからのウェブ上の活動によって、はてなダイアリーは技術よりの内容が主でしたが、ここでは他のことも色々と書けたらいいかなー程度に考えています。
+運用してみないと、実際どうなるかはわからないですね。</p>
+
+<p>ちなみにここは、<a href="http://pages.github.com/">github:pages</a>と<a href="http://octopress.org/">OCTPRESS</a>によって成り立っています。
+ドメインを取るほどには力を入れるわけではないですが、それなりに自由にできそうなのが良いですね。
+また、エントリを生成する過程で、git、markdown、rakeといった（粒度バラバラですが）つぶしのきく技術を使えるのも良いです。
+デザインなんかも、いじりたいですね、おいおい。</p>
+
+<p>そんなところでしょうか。
+ハロー2012年！</p>
+]]></content>
+  </entry>
+  
+</feed>
