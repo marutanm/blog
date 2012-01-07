@@ -9,7 +9,8 @@
   <meta name="author" content="marutanm">
 
   
-  <meta name="description" content="2011年のまとめ兼2012年の抱負みたいな、まとまりもとりとめもないテキストのはずです、これ。 そうそう、昨年終わり頃に最新型電気カイロを買いました。ポケットに入れておくとけっこう暖かいです。しかもWiMAXテザリングができたり、なかなか高機能です。 はい、 &hellip;">
+  <meta name="description" content="地味にめんどうなんですよね、Octopressでローカルプレビューするの。 普通にやるとするとrake generateでmarkdownを変換して、rake previewでローカルでjekyllを起動してブラウザで確認といった流れ。
+エントリ投稿毎に再構築とか、 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -76,6 +77,51 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/01/07/octopress-preview-pow/">OctopressのpreviewをPowでやると便利ですよという話</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-01-07T16:12:00+09:00" pubdate data-updated="true">Jan 7<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>地味にめんどうなんですよね、Octopressでローカルプレビューするの。</p>
+
+<p>普通にやるとすると<code>rake generate</code>でmarkdownを変換して、<code>rake preview</code>でローカルでjekyllを起動してブラウザで確認といった流れ。
+エントリ投稿毎に再構築とか、なんかウェブログという言葉がメジャーになり始めた頃を思いましますね。
+さておき、少しの変更のたびにコマンド2発、エディタとターミナルとブラウザをいったりきたりする必要があります。
+そこで、やっぱり<a href="http://pow.cx">Pow</a>ですよ。
+<code>rake preview</code>せずに<code>public/index.html</code>をブラウザで確認できるようになります。
+また、<code>rake watch</code>を使えば編集中のファイルを保存した時点でエントリを再生成してくれるので、<code>rake generate</code>が不要になります。</p>
+
+<p>なんですが、<a href="http://octopress.org/docs/blogging/">公式ドキュメントにも書いてる</a>ので自力でOctopressを使えるひとなら言わずもがなですよね・・・</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -166,6 +212,10 @@
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/01/07/octopress-preview-pow/">OctopressのpreviewをPowでやると便利ですよという話</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2012/01/01/new-years-day/">New Year&#8217;s Day</a>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: octopress | marutanmlog]]></title>
+  <link href="http://marutanm.github.com/blog/categories/octopress/atom.xml" rel="self"/>
+  <link href="http://marutanm.github.com/blog/"/>
+  <updated>2012-01-07T16:35:26+09:00</updated>
+  <id>http://marutanm.github.com/blog/</id>
+  <author>
+    <name><![CDATA[marutanm]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[OctopressのpreviewをPowでやると便利ですよという話]]></title>
+    <link href="http://marutanm.github.com/blog/2012/01/07/octopress-preview-pow/"/>
+    <updated>2012-01-07T16:12:00+09:00</updated>
+    <id>http://marutanm.github.com/blog/2012/01/07/octopress-preview-pow</id>
+    <content type="html"><![CDATA[<p>地味にめんどうなんですよね、Octopressでローカルプレビューするの。</p>
+
+<p>普通にやるとすると<code>rake generate</code>でmarkdownを変換して、<code>rake preview</code>でローカルでjekyllを起動してブラウザで確認といった流れ。
+エントリ投稿毎に再構築とか、なんかウェブログという言葉がメジャーになり始めた頃を思いましますね。
+さておき、少しの変更のたびにコマンド2発、エディタとターミナルとブラウザをいったりきたりする必要があります。
+そこで、やっぱり<a href="http://pow.cx">Pow</a>ですよ。
+<code>rake preview</code>せずに<code>public/index.html</code>をブラウザで確認できるようになります。
+また、<code>rake watch</code>を使えば編集中のファイルを保存した時点でエントリを再生成してくれるので、<code>rake generate</code>が不要になります。</p>
+
+<p>なんですが、<a href="http://octopress.org/docs/blogging/">公式ドキュメントにも書いてる</a>ので自力でOctopressを使えるひとなら言わずもがなですよね・・・</p>
+]]></content>
+  </entry>
+  
+</feed>
