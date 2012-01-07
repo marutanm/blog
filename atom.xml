@@ -4,7 +4,7 @@
   <title><![CDATA[marutanmlog]]></title>
   <link href="http://marutanm.github.com/blog/atom.xml" rel="self"/>
   <link href="http://marutanm.github.com/blog/"/>
-  <updated>2012-01-07T16:35:26+09:00</updated>
+  <updated>2012-01-07T16:48:52+09:00</updated>
   <id>http://marutanm.github.com/blog/</id>
   <author>
     <name><![CDATA[marutanm]]></name>
@@ -18,7 +18,8 @@
     <link href="http://marutanm.github.com/blog/2012/01/07/octopress-preview-pow/"/>
     <updated>2012-01-07T16:12:00+09:00</updated>
     <id>http://marutanm.github.com/blog/2012/01/07/octopress-preview-pow</id>
-    <content type="html"><![CDATA[<p>地味にめんどうなんですよね、Octopressでローカルプレビューするの。</p>
+    <content type="html"><![CDATA[<p><a href="http://www.flickr.com/photos/marutanm/6597268041/" title="2 by marutanm, on Flickr"><img src="http://farm8.staticflickr.com/7018/6597268041_14c0e61b4b_m.jpg" width="240" height="159" alt="2" class="left"></a>
+地味にめんどうなんですよね、Octopressでローカルプレビューするの。</p>
 
 <p>普通にやるとすると<code>rake generate</code>でmarkdownを変換して、<code>rake preview</code>でローカルでjekyllを起動してブラウザで確認といった流れ。
 エントリ投稿毎に再構築とか、なんかウェブログという言葉がメジャーになり始めた頃を思いましますね。
