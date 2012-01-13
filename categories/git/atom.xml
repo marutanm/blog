@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: git | marutanmlog]]></title>
+  <link href="http://marutanm.github.com/blog/categories/git/atom.xml" rel="self"/>
+  <link href="http://marutanm.github.com/blog/"/>
+  <updated>2012-01-14T00:46:52+09:00</updated>
+  <id>http://marutanm.github.com/blog/</id>
+  <author>
+    <name><![CDATA[marutanm]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[ノーコミットでマージ、無料です]]></title>
+    <link href="http://marutanm.github.com/blog/2012/01/13/git-merge-no-commit/"/>
+    <updated>2012-01-13T23:32:00+09:00</updated>
+    <id>http://marutanm.github.com/blog/2012/01/13/git-merge-no-commit</id>
+    <content type="html"><![CDATA[<p>便利ですよね、git。</p>
+
+<p><span class='pullquote-right' data-pullquote='いかにコミットログを綺麗に'>
+使い始めは、ステージに感動しました。
+任意の変更だけをコミットすることで、それぞれのコミットを簡潔かつ整ったものにしておけます。</p>
+
+<p>しばらく使っていて、今度はブランチの扱いがとても容易だった事に感動したと記憶しています。
+トピックブランチで作業することにより、masterはつねに稼働可能な状態を保ちつつ、大規模な修正や機能追加も恐れることなく作業できます。
+さらに、トピックブランチとしての作業記録が残ることによって、一連のコミットをグループとして認識可能になります。
+このブランチングと、それに伴ってコミットログを綺麗にしておけることこそが、gitを使うキモであると考えています。
+git習熟度は「いかにコミットログを綺麗にわかりやすくしておけるか」に大きく影響してくると断言できましょう。
+</span></p>
+
+<p><span class='pullquote-right' data-pullquote='マージ時に自動的にコミットしない'>
+では、綺麗でわかりやすいコミットログとはどんなものなのか？
+これは、一概にはいえない部分があるのです。
+多人数での開発では、ブランチングでの作業に何らかの指針があるかと思います。
+その場合、それに従うのがわかりやすく、綺麗なコミットログということになるでしょう。
+個人の場合は、常にmasterだけで作業するという話をたまに聞きますが、それでは綺麗なコミットログにはなり得ないと考えています。
+適宜ブランチを切って作業し、どういった形でマージするかまでを考えてやることによって、初めてコミットログは美しくなるのです。</p>
+
+<p>fast-forwardマージにするか、ブランチを残しておくか、はたまたマージコミットはどうするか等マージにはさまざまな手法があります、
+どれを選択すべきかは時と場合によって変わってきますが、一つ覚えておいても損はないオプションが<code>--no-commit</code>です、
+マージ時に自動的にコミットしないというオプションです。
+fastforwardではないマージの場合、 自動的に<code>Merge branch 'here-is-banch-name' into master</code>といったようにマージコミットがなされます。
+このマージコミットがなされないのです。
+</span></p>
+
+<p>これのなにが嬉しいのか？どんなときに使うのか？</p>
+
+<p><span class='pullquote-right' data-pullquote='コミットの意図、ブランチングの意図'>
+わたしは、トピックブランチ作業中にすすんでしまったmasterの変更を取り込むときに使うことがあります。
+<code>Merge branch 'master' into topic-branch</code>よりも<code>Import update of master</code>というコミットコメントのほうがコミットを正確に表現しているとの考えからです。
+masterの更新に追従する場合、rebaseを使うこともあります。
+個人的には、トピックブランチの一連のコミットが完了してmasterにPull Requestを送る必要がある場合にはrebaseを、masterの変更を取り込みつつもさらにトピックブランチで作業を継続したい場合にはno-commitでマージを選択する傾向があります。
+rebaseは便利ですが、マージの手法によってはブランチが残らない状況を生みやすいことや、コンフリクト時の対応が複数回必要となる場合があることを考え、使用を控える場面があることを書き添えておきます。</p>
+
+<p>もう一点、これはおそらく余り正当な使いかたではないでしょうが、他ブランチとコンフリクトが発生しないかのドライラン代わりに使うこともあります。
+no-commitでマージし、<code>git status</code>を確認。
+コンフリクトしてるファイルはないかどうかをチェックするのです。
+そのままマージしてしまうこともあれば、<code>git reset --hard</code>することもあります。
+特に多人数で協調作業する場合、マージ時のコンフリクトを予め避けておくことは非常に重要ですから。
+また、オープンソースのプロジェクトにPull Requestを送る場合は、適切なブランチングとともに各コミットを適切なサイズに分割しておくことも必要ですよね。</p>
+
+<p>--no-commitでのマージはもちろん、本エントリでは言及しませんでしたが<code>git merge --no-ff</code>さらには<code>git rebase -i</code>をいとわず、綺麗でなおかつコミットの意図、ブランチングの意図が反映された美しいコミットツリーを形成していきましょう！
+</span></p>
+]]></content>
+  </entry>
+  
+</feed>
