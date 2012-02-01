@@ -9,9 +9,9 @@
   <meta name="author" content="marutanm">
 
   
-  <meta name="description" content="便利ですよね、git。 使い始めは、ステージに感動しました。
-任意の変更だけをコミットすることで、それぞれのコミットを簡潔かつ整ったものにしておけます。 しばらく使っていて、今度はブランチの扱いがとても容易だった事に感動したと記憶しています。
-トピックブランチで作業することにより、 &hellip;">
+  <meta name="description" content="homebrewで複数versionのformulaを切り替えるには
+エンジニアなら、バージョン依存との戦いはだれもが頭を悩ますところですよね。
+「このバージョンではバグがー」やら「Pull Requestは出てるけどmergeされてなくて」などなど。 最近ですとPowのv0.3. &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -78,6 +78,89 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/02/01/homebrew-switch-formula-version/">Homebrewで複数versionはいってるformulaをきりかえるには</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-02-01T23:37:00+09:00" pubdate data-updated="true">Feb 1<span>st</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>homebrewで複数versionのformulaを切り替えるには
+エンジニアなら、バージョン依存との戦いはだれもが頭を悩ますところですよね。
+「このバージョンではバグがー」やら「Pull Requestは出てるけどmergeされてなくて」などなど。</p>
+
+<p>最近ですとPowのv0.3.2はNodeのv0.6系と相性が悪かったりします。masterでは修正されているらしいですが。
+メインの開発プロジェクトでは0.6系を使いたいけど、こっちのお気楽プロジェクトではpowりたいから0.4系が必要なんです>&lt;</p>
+
+<p>そんなとき、homebrewではどうするか？答えは簡単、 <code>switch</code> しましょう！
+homebrewには外部コマンドという位置づけでhelpには載ってないコマンドがいくつかあります。
+その中の一つであるswitchを使えば即座にインストール済みformulaのバージョンを切り替えることができます！</p>
+
+<blockquote><p>Switch between installed versions of <formula>. If you have multiple versions of a formula installed, the standard brew link command will fail. switch tries to unlink all versions from HOMEBREW_PREFIX, then [re]links the requested version.</p><footer><strong>External Commands - GitHub</strong> <cite><a href='https://github.com/mxcl/homebrew/wiki/External-Commands'>github.com/mxcl/homebrew/wiki/&hellip;</a></cite></footer></blockquote>
+
+
+<p>こんな感じ</p>
+
+<div><script src='https://gist.github.com/1717402.js?file='></script>
+<noscript><pre><code># nodeのバージョンを確認
+% node -v
+v0.6.2
+
+# インストール済みのnodeを確認
+% brew info node
+node 0.6.2
+http://nodejs.org/
+/usr/local/Cellar/node/0.4.10 (72 files, 7.6M)
+/usr/local/Cellar/node/0.6.2 (80 files, 7.6M) *
+
+# switchしてみる！！
+% brew switch node 0.4.10
+Cleaning /usr/local/Cellar/node/0.4.10
+Cleaning /usr/local/Cellar/node/0.6.2
+68 links created for /usr/local/Cellar/node/0.4.10
+
+# nodeのバージョン確認
+% node -v
+v0.4.10
+
+# やったね！！</code></pre></noscript></div>
+
+
+<p>便利ですね！！
+(といっても、シンボリックリンクはりなおしてくれてるだけのような気もしますが)</p>
+
+<p>ところでこの外部コマンド群、他にも色々かゆいところに手が届きそうなものが揃っているようですよ。
+リンク先をご参照ください。</p>
+
+<p><a href="https://github.com/mxcl/homebrew/wiki/External-Commands">External Commands - GitHub</a></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -295,6 +378,10 @@ no-commitでマージし、<code>git status</code>を確認。
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/02/01/homebrew-switch-formula-version/">homebrewで複数versionはいってるformulaをきりかえるには</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2012/01/13/git-merge-no-commit/">ノーコミットでマージ、無料です</a>

@@ -4,7 +4,7 @@
   <title><![CDATA[marutanmlog]]></title>
   <link href="http://marutanm.github.com/blog/atom.xml" rel="self"/>
   <link href="http://marutanm.github.com/blog/"/>
-  <updated>2012-01-14T00:46:52+09:00</updated>
+  <updated>2012-02-01T23:58:54+09:00</updated>
   <id>http://marutanm.github.com/blog/</id>
   <author>
     <name><![CDATA[marutanm]]></name>
@@ -12,6 +12,62 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[homebrewで複数versionはいってるformulaをきりかえるには]]></title>
+    <link href="http://marutanm.github.com/blog/2012/02/01/homebrew-switch-formula-version/"/>
+    <updated>2012-02-01T23:37:00+09:00</updated>
+    <id>http://marutanm.github.com/blog/2012/02/01/homebrew-switch-formula-version</id>
+    <content type="html"><![CDATA[<p>homebrewで複数versionのformulaを切り替えるには
+エンジニアなら、バージョン依存との戦いはだれもが頭を悩ますところですよね。
+「このバージョンではバグがー」やら「Pull Requestは出てるけどmergeされてなくて」などなど。</p>
+
+<p>最近ですとPowのv0.3.2はNodeのv0.6系と相性が悪かったりします。masterでは修正されているらしいですが。
+メインの開発プロジェクトでは0.6系を使いたいけど、こっちのお気楽プロジェクトではpowりたいから0.4系が必要なんです>&lt;</p>
+
+<p>そんなとき、homebrewではどうするか？答えは簡単、 <code>switch</code> しましょう！
+homebrewには外部コマンドという位置づけでhelpには載ってないコマンドがいくつかあります。
+その中の一つであるswitchを使えば即座にインストール済みformulaのバージョンを切り替えることができます！</p>
+
+<blockquote><p>Switch between installed versions of <formula>. If you have multiple versions of a formula installed, the standard brew link command will fail. switch tries to unlink all versions from HOMEBREW_PREFIX, then [re]links the requested version.</p><footer><strong>External Commands - GitHub</strong> <cite><a href='https://github.com/mxcl/homebrew/wiki/External-Commands'>github.com/mxcl/homebrew/wiki/&hellip;</a></cite></footer></blockquote>
+
+
+<p>こんな感じ</p>
+
+<div><script src='https://gist.github.com/1717402.js?file='></script>
+<noscript><pre><code># nodeのバージョンを確認
+% node -v
+v0.6.2
+
+# インストール済みのnodeを確認
+% brew info node
+node 0.6.2
+http://nodejs.org/
+/usr/local/Cellar/node/0.4.10 (72 files, 7.6M)
+/usr/local/Cellar/node/0.6.2 (80 files, 7.6M) *
+
+# switchしてみる！！
+% brew switch node 0.4.10
+Cleaning /usr/local/Cellar/node/0.4.10
+Cleaning /usr/local/Cellar/node/0.6.2
+68 links created for /usr/local/Cellar/node/0.4.10
+
+# nodeのバージョン確認
+% node -v
+v0.4.10
+
+# やったね！！</code></pre></noscript></div>
+
+
+<p>便利ですね！！
+(といっても、シンボリックリンクはりなおしてくれてるだけのような気もしますが)</p>
+
+<p>ところでこの外部コマンド群、他にも色々かゆいところに手が届きそうなものが揃っているようですよ。
+リンク先をご参照ください。</p>
+
+<p><a href="https://github.com/mxcl/homebrew/wiki/External-Commands">External Commands - GitHub</a></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[ノーコミットでマージ、無料です]]></title>

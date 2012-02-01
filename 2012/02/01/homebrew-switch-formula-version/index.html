@@ -5,12 +5,13 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>OctopressのpreviewをPowでやると便利ですよという話 - marutanmlog</title>
+  <title>homebrewで複数versionはいってるformulaをきりかえるには - marutanmlog</title>
   <meta name="author" content="marutanm">
 
   
-  <meta name="description" content="地味にめんどうなんですよね、Octopressでローカルプレビューするの。 普通にやるとするとrake generateでmarkdownを変換して、rake previewでローカルでjekyllを起動してブラウザで確認といった流れ。
-エントリ投稿毎に再構築とか、 &hellip;">
+  <meta name="description" content="homebrewで複数versionのformulaを切り替えるには
+エンジニアなら、バージョン依存との戦いはだれもが頭を悩ますところですよね。
+「このバージョンではバグがー」やら「Pull Requestは出てるけどmergeされてなくて」などなど。 最近ですとPowのv0.3. &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +20,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://marutanm.github.com/blog/2012/01/07/octopress-preview-pow">
+  <link rel="canonical" href="http://marutanm.github.com/blog/2012/02/01/homebrew-switch-formula-version">
   <link href="/blog/favicon.ico" rel="icon">
   <link href="/blog/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/blog/javascripts/modernizr-2.0.js"></script>
@@ -80,7 +81,7 @@
   
   <header>
     
-      <h1 class="entry-title">OctopressのpreviewをPowでやると便利ですよという話</h1>
+      <h1 class="entry-title">Homebrewで複数versionはいってるformulaをきりかえるには</h1>
     
     
       <p class="meta">
@@ -96,24 +97,61 @@
   
 
 
-<time datetime="2012-01-07T16:12:00+09:00" pubdate data-updated="true">Jan 7<span>th</span>, 2012</time>
+<time datetime="2012-02-01T23:37:00+09:00" pubdate data-updated="true">Feb 1<span>st</span>, 2012</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p><a href="http://www.flickr.com/photos/marutanm/6597268041/" title="2 by marutanm, on Flickr"><img src="http://farm8.staticflickr.com/7018/6597268041_14c0e61b4b_m.jpg" width="240" height="159" alt="2" class="left"></a>
-地味にめんどうなんですよね、Octopressでローカルプレビューするの。</p>
+<div class="entry-content"><p>homebrewで複数versionのformulaを切り替えるには
+エンジニアなら、バージョン依存との戦いはだれもが頭を悩ますところですよね。
+「このバージョンではバグがー」やら「Pull Requestは出てるけどmergeされてなくて」などなど。</p>
 
-<p>普通にやるとすると<code>rake generate</code>でmarkdownを変換して、<code>rake preview</code>でローカルでjekyllを起動してブラウザで確認といった流れ。
-エントリ投稿毎に再構築とか、なんかウェブログという言葉がメジャーになり始めた頃を思いましますね。
-さておき、少しの変更のたびにコマンド2発、エディタとターミナルとブラウザをいったりきたりする必要があります。
-そこで、やっぱり<a href="http://pow.cx">Pow</a>ですよ。
-<code>rake preview</code>せずに<code>public/index.html</code>をブラウザで確認できるようになります。
-また、<code>rake watch</code>を使えば編集中のファイルを保存した時点でエントリを再生成してくれるので、<code>rake generate</code>が不要になります。</p>
+<p>最近ですとPowのv0.3.2はNodeのv0.6系と相性が悪かったりします。masterでは修正されているらしいですが。
+メインの開発プロジェクトでは0.6系を使いたいけど、こっちのお気楽プロジェクトではpowりたいから0.4系が必要なんです>&lt;</p>
 
-<p>なんですが、<a href="http://octopress.org/docs/blogging/">公式ドキュメントにも書いてる</a>ので自力でOctopressを使えるひとなら言わずもがなですよね・・・</p>
+<p>そんなとき、homebrewではどうするか？答えは簡単、 <code>switch</code> しましょう！
+homebrewには外部コマンドという位置づけでhelpには載ってないコマンドがいくつかあります。
+その中の一つであるswitchを使えば即座にインストール済みformulaのバージョンを切り替えることができます！</p>
+
+<blockquote><p>Switch between installed versions of <formula>. If you have multiple versions of a formula installed, the standard brew link command will fail. switch tries to unlink all versions from HOMEBREW_PREFIX, then [re]links the requested version.</p><footer><strong>External Commands - GitHub</strong> <cite><a href='https://github.com/mxcl/homebrew/wiki/External-Commands'>github.com/mxcl/homebrew/wiki/&hellip;</a></cite></footer></blockquote>
+
+
+<p>こんな感じ</p>
+
+<div><script src='https://gist.github.com/1717402.js?file='></script>
+<noscript><pre><code># nodeのバージョンを確認
+% node -v
+v0.6.2
+
+# インストール済みのnodeを確認
+% brew info node
+node 0.6.2
+http://nodejs.org/
+/usr/local/Cellar/node/0.4.10 (72 files, 7.6M)
+/usr/local/Cellar/node/0.6.2 (80 files, 7.6M) *
+
+# switchしてみる！！
+% brew switch node 0.4.10
+Cleaning /usr/local/Cellar/node/0.4.10
+Cleaning /usr/local/Cellar/node/0.6.2
+68 links created for /usr/local/Cellar/node/0.4.10
+
+# nodeのバージョン確認
+% node -v
+v0.4.10
+
+# やったね！！</code></pre></noscript></div>
+
+
+<p>便利ですね！！
+(といっても、シンボリックリンクはりなおしてくれてるだけのような気もしますが)</p>
+
+<p>ところでこの外部コマンド群、他にも色々かゆいところに手が届きそうなものが揃っているようですよ。
+リンク先をご参照ください。</p>
+
+<p><a href="https://github.com/mxcl/homebrew/wiki/External-Commands">External Commands - GitHub</a></p>
 </div>
 
 
@@ -136,12 +174,12 @@
   
 
 
-<time datetime="2012-01-07T16:12:00+09:00" pubdate data-updated="true">Jan 7<span>th</span>, 2012</time>
+<time datetime="2012-02-01T23:37:00+09:00" pubdate data-updated="true">Feb 1<span>st</span>, 2012</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/octopress/'>octopress</a>
+    <a class='category' href='/blog/categories/homebrew/'>homebrew</a>
   
 </span>
 
@@ -150,7 +188,7 @@
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://marutanm.github.com/blog/2012/01/07/octopress-preview-pow/" data-via="marutanm" data-counturl="http://marutanm.github.com/blog/2012/01/07/octopress-preview-pow/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://marutanm.github.com/blog/2012/02/01/homebrew-switch-formula-version/" data-via="marutanm" data-counturl="http://marutanm.github.com/blog/2012/02/01/homebrew-switch-formula-version/" >Tweet</a>
   
   
   
@@ -159,10 +197,8 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2012/01/01/new-years-day/" title="Previous Post: New Year's Day">&laquo; New Year's Day</a>
+        <a class="basic-alignment left" href="/blog/2012/01/13/git-merge-no-commit/" title="Previous Post: ノーコミットでマージ、無料です">&laquo; ノーコミットでマージ、無料です</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2012/01/13/git-merge-no-commit/" title="next Post: ノーコミットでマージ、無料です">ノーコミットでマージ、無料です &raquo;</a>
       
     </p>
   </footer>
@@ -267,8 +303,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://marutanm.github.com/blog/2012/01/07/octopress-preview-pow/';
-        var disqus_url = 'http://marutanm.github.com/blog/2012/01/07/octopress-preview-pow/';
+        var disqus_identifier = 'http://marutanm.github.com/blog/2012/02/01/homebrew-switch-formula-version/';
+        var disqus_url = 'http://marutanm.github.com/blog/2012/02/01/homebrew-switch-formula-version/';
         var disqus_script = 'embed.js';
       
     (function () {
